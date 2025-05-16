@@ -4,3 +4,5 @@
 !/data/processed/.gitkeep
 /output/*
 !/output/.gitkeep
+
+/study.r

@@ -1,12 +1,14 @@
 # install first plyr for lapply
-install.packages("plyr")
+if(!require(plyr)) install.packages("plyr")
 library("plyr")
 
 # add necessary packages
 packages <- c(
     "readtext",
     "stringr",
-    "testthat"
+    "testthat",
+    "tm",
+    "wordcloud"
 )
 #lapply(packages, install.packages, character.only = TRUE)
 lapply(packages, library, character.only = TRUE)

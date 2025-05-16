@@ -4,7 +4,6 @@ unzip(zip_path, exdir = data_raw_path)
 
 # read all .txt files in the directory and get list of (file name, text)
 text_list <- readtext(paste(data_raw_path, "\\*.txt", sep = ""))
-# result <- ddply(text_list, .variables="doc_id", .fun=ramify_News_list_from_txt)
 
 # iterate over rows (a non-typical R code?)
 temp_row <- as.integer(1)
