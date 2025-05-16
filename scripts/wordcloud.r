@@ -6,15 +6,12 @@
 text <- Corpus(DirSource(paste(data_raw_path,"\\",sep="")))
 
 # transformations
-text <- tm_map(text, content_transformer(tolower))
-text <- tm_map(text, removeNumbers)
-text <- tm_map(text, removeWords, stopwords("german"))
-text <- tm_map(text, removePunctuation)
-text <- tm_map(text, stripWhitespace)
+crean_corpus_german(text)
 
 meta(text[[1]])
 inspect(text[[1]])
 
+# wordcloud
 wordcloud(
     text,
     scale=c(3,0.5),

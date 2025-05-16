@@ -7,8 +7,11 @@ packages <- c(
     "readtext",
     "stringr",
     "testthat",
+    "tidytext",
+    "tidyverse",
     "tm",
-    "wordcloud"
+    "wordcloud",
+    "wordcloud2"
 )
 #lapply(packages, install.packages, character.only = TRUE)
 lapply(packages, library, character.only = TRUE)
