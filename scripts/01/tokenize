@@ -1,0 +1,38 @@
+# read all .txt files in the directory and get list of (file name, text)
+load(paste(data_processed_path, "\\df_txt_date_news.rdata", sep=""))
+
+# additional stopwords in german news
+original_stopwords <- c(
+    "dass",
+    "heute",
+    "menschen",
+    "mehr",
+    "rund",
+    "sei",
+    "seien",
+    "worden",
+    "wurde",
+    "wurden"
+)
+
+# tokenize all news
+filtered_tokens <- df_txt_date_news %>% 
+unnest_tokens(output = word, input = news) %>%
+    mutate(stem = wordStem(word, language="german")) %>%   # stems words and creates column
+    filter(!grepl('[0-9]', word) ) %>%    # remove numbers
+    filter(! word %in% stopwords("german") ) %>%
+    filter(! word %in% original_stopwords) # remove stopwords
+
+# count word by month
+month_word_count <- 
+    filtered_tokens %>% 
+    group_by(rounded_by_month = lubridate::floor_date(date, 'month')) %>%
+    count(rounded_by_month, word) %>% 
+    filter(n >= 10) %>% # remove minor words
+    arrange(desc(n))
+
+# count occurance of "trump" per month
+month_trump_count <- 
+month_word_count %>% 
+    filter(word == "trump") %>% 
+    arrange(rounded_by_month)
