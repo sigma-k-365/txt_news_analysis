@@ -5,7 +5,7 @@ load(paste(data_processed_path, "\\df_txt_date_news.rdata", sep=""))
 count_by_month <- df_txt_date_news %>% 
 group_by(rounded_by_month = lubridate::floor_date(date, 'month')) %>%
 summarize(count = n())
-ggplot(count_by_month, aes(x=rounded_by_month, y=count)) + geom_line() + geom_point(color = "red") + scale_x_date(limits = as.Date(c("2024-01-01", "2025-06-01")), date_breaks = "month", date_labels = "%m %Y")
+ggplot(count_by_month, aes(x=rounded_by_month, y=count)) + geom_line() + geom_point(color = "red") + scale_x_date(limits = as.Date(c("2024-01-01", "2025-06-01")), date_breaks = "month", date_labels = "%M %Y")
 
 # tokenize all news
 filtered_tokens <- df_txt_date_news %>% 
