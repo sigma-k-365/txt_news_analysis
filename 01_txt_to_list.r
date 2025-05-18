@@ -10,9 +10,9 @@ ddply(
     summarize, 
     date = get_Date_from_German_format(doc_id), 
     news = strsplit(text, split="\n\n")) %>% 
-    unnest(news)
+    arrange(date) %>%
+    unnest_longer(news, indices_to="order")
 
 # save and release from the memory
 save(df_txt_date_news, file = paste(data_processed_path, "\\df_txt_date_news.rdata", sep=""))
 rm(df_txt_date_news)
-

@@ -1,13 +1,15 @@
 # use wordcloud2 with more options
 # ref: https://cran.r-project.org/web/packages/wordcloud2/vignettes/wordcloud.html#lettercloud-function
-text <- Corpus(DirSource(paste(data_raw_path,"\\",sep="")))
-text <- clean_corpus_german(text)
 
-# convert to data.frame with columns "word" and "frequency"
-df_Term_Freq <- data.frame(get_freq_terms(text))
+# get data.frame with columns "word" and "frequency"
+df_Term_Freq %>%
+Corpus(DirSource(paste(data_raw_path,"\\",sep=""))) %>%
+clean_corpus_german() %>%
+get_freq_terms %>%
+data.frame
 
 # square with gray background
-wordcloud2(df_Term_Freq, color = "random-light", backgroundColor = "grey", shape="star")
+wordcloud2(df_Term_Freq, color = "random-light", backgroundColor = "grey")#, shape="star")
 # rotation
 wordcloud2(df_Term_Freq, minRotation = -pi/6, maxRotation = -pi/6, minSize = 10,
   rotateRatio = 1)

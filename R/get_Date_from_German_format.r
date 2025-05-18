@@ -25,13 +25,3 @@ get_Date_from_German_format <- function(datum_monat_jahr){
         }
     )
 }
-
-# arg: ("doc_id", "text") 
-# return: list ("file name", 20YY-MM-DD, list of news)
-get_News_list_from_txt <- function(doc_id, text)
-{
-    # remove extension
-    file_name <- tools::file_path_sans_ext(doc_id)
-    # split the text into a list by double carriage return
-    list(file_name, get_Date_from_German_format(file_name),strsplit(text, split="\n\n"))
-}
