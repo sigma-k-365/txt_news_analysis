@@ -1,8 +1,7 @@
 /data/raw/*
 !/data/raw/.gitkeep
+!/data/raw/01.02.24.txt
 /data/processed/*
 !/data/processed/.gitkeep
 /output/*
 !/output/.gitkeep
-
-/study.r
