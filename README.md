@@ -1,5 +1,5 @@
 # About
-This R program analyses the news scripts of heute Express broadcasted at the follwing site from Feb2024 to May2025.
+This R program analyses the news transcripts of heute Express broadcasted from Feb2024 to May2025 at the follwing site.
 https://www.zdf.de/magazine/heute-xpress-movie-100
 
 ## Data input
@@ -15,5 +15,7 @@ https://www.zdf.de/magazine/heute-xpress-movie-100
 - scripts dependent on the result of 01 will be placed in scripts/01/ etc.
 
 ## Analysis
+The number of news transribed by the author is as follows.
+![num_news_per_month](https://github.com/sigma-k-365/txt_news_analysis/blob/main/data/ref/num_news_per_month.png)
 When we count the total occarance of each word, Wordcloud2 shows the following.
 ![first_word_cloud](https://github.com/sigma-k-365/txt_news_analysis/blob/main/data/ref/first_wordcloud.png)
