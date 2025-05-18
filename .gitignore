@@ -1,6 +1,6 @@
 /data/raw/*
 !/data/raw/.gitkeep
-!/data/raw/01.02.24.txt
+!/data/raw/01.02.25.txt
 /data/processed/*
 !/data/processed/.gitkeep
 /output/*
