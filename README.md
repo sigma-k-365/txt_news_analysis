@@ -22,6 +22,8 @@ R 4.5.0; R Extension for Visual Studio Code 2.8.5
 By counting the total occarance of each word, Wordcloud2 shows the following.
 [source](https://github.com/sigma-k-365/txt_news_analysis/blob/main/scripts/wordcloud2.r)
 ![first_word_cloud](https://github.com/sigma-k-365/txt_news_analysis/blob/main/data/ref/first_wordcloud.png)
+Exclude unnecessary words from the later analysis. 
+[source](https://github.com/sigma-k-365/txt_news_analysis/blob/main/R/extended_stopwords_de.r)
 
 ## Scenario 1: Using tokenization 
 ### 1-1: Tokenization to words 
