@@ -4,7 +4,9 @@ library("plyr")
 
 # add necessary packages
 packages <- c(
+    "insight",
     "readtext",
+    "SnowballC",
     "stringr",
     "testthat",
     "tidytext",
